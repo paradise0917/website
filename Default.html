@@ -67,6 +67,8 @@ function CreateItem(Type)
             break;
     }
 
+    $("#navbars").collapse("hide");
+
     $(".nav-item").removeClass("active");
     $("#nav_link_"+Type).addClass("active");
 
@@ -340,6 +342,19 @@ function CreateLifeImg(ParentID)
 document.addEventListener("DOMContentLoaded", function(){
     ClearItem();
     CreateItem_Work();
+});
+
+window.addEventListener("scroll",function(){
+    let scroll = this.scrollY;
+    if(scroll!=0)
+    {
+        document.querySelector(".navbar").style.padding="10px 10px 10px 10px";
+    }
+    else
+    {
+        document.querySelector(".navbar").style.padding="30px 10px 30px 10px";
+    }
+    
 });
 
 </script>
