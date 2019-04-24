@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -344,4 +345,353 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 
+=======
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Rita Chang</title>
+    <link rel="icon" href="IMG/Rita.ico" type="image/icon type">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/slick-theme.css"/>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-lignt fixed-top">
+        <div class="container">
+            <a class="navbar-brand"><img alt="Rita" src="IMG/Icon_Rita.png" class="navbar-img">ita Chang</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbars">
+            <ul class="navbar-nav ml-auto">
+                <li id="nav_link_Work" class="nav-item active">
+                <a class="nav-link" href="#" onclick="CreateItem('Work')">Work</a>
+                </li>
+                <li id="nav_link_About" class="nav-item">
+                <a class="nav-link" href="#" onclick="CreateItem('About')">About</a>
+                </li>
+                <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Portfolio</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="FILE/Resume_Rita.pdf">Resume</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="div_content" class="container"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="JS/slick.min.js"></script>
+<script type="text/javascript">
+
+//Change Menu
+function CreateItem(Type)
+{
+    switch(Type)
+    {
+        case "Work":
+            {
+                ClearItem();
+                CreateItem_Work();
+            }
+            break;
+        case "About":
+            {
+                ClearItem();
+                CreateItem_About();
+            }
+            break;
+        default:
+            {
+                //pass
+            }
+            break;
+
+    }
+
+    $(".nav-item").removeClass("active");
+    $("#nav_link_"+Type).addClass("active");
+
+}
+
+//Reset
+function ClearItem()
+{
+    $("#div_content").empty();
+}
+
+//Work
+function CreateItem_Work()
+{
+    CreateTitle("div_content");
+    CreateExperience("div_content");
+    CreateWork("div_content");
+}
+
+function CreateTitle(ParentID)
+{
+    $("#"+ParentID).append("<span class='font-size-title bolder'>Work</span>");
+    $("#"+ParentID).append("<div class='block-main-left'><span class='font-size-content'>研究所時期開始擔任指導教授的計畫兼任助理，畢業後則在一間網管公司任職，以下是我的工作經歷與專案項目的介紹🙋‍</span></div><br/><br/>");
+
+}
+
+function CreateExperience(ParentID)
+{
+    $("#"+ParentID).append("<div id='div_experience'></div>");
+
+     //Block Title
+     $("#div_experience").append("<div class='block-main-left'><span class='font-size-title-small'>"
+    +"<img alt='arrow-right' class='img-title' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVEhL7dQ7CoAwEEXRbMPv/jfgMhQEC79r0ffEgRCmy0wh5MIptJgpjAmlEhtggf59cuj+XNDxhXWygE5owbR4AR3QgFnpAtqgBpO0BbRCBdlpw8UI2WmDxQTZaYPJ7Dtow3cwO0npcB5T038hHu76o7ldFbzsZnC77Eq/LoQHcOtETlFNEk4AAAAASUVORK5CYII='>"
+    +"Experience</span></div>");
+
+    //Flow
+    $("#div_experience").append('<div class="flow">\
+                        <ul>\
+                            <li class="root">\
+                                <div class="dot color-primary-bak"></div>\
+                                <div class="dot-title"> \
+                                    <span class="color-secondary bolder">e-SOFT 曜祥網技</span>\
+                                    <span class="color-third"> ( 2015.9 - 2019.4 )</span><br/>\
+                                    <span class="color-secondary bolder">軟體工程師 / 資深工程師 </span>\
+                                </div><br/>\
+                                <ul>\
+                                    <li>前端架構規劃與 Coding Style 制定</li>\
+                                    <li>參與 API 溝通格式制定與討論</li>\
+                                    <li>前端系統開發與維護 (RWD)</li>\
+                                    <li>系統操作流程與網頁視覺風格設計 (UI、UX)</li>\
+                                    <li>舊系統維護與功能擴充 : 多國語言功能、儀表板設計與開發、表格凍結頂端列功能、系統風格翻新</li>\
+                                    <li>公司部分產品 UI 設計、ICON 繪製</li>\
+                                    <li>測試公司主線產品</li>\
+                                    <li>協助新進同仁前端技術學習與開發</li>\
+                                </ul>\
+                            </li>\
+                            <li class="root">\
+                                <div class="dot color-primary-bak"></div>\
+                                <div class="dot-title">\
+                                    <span class="color-secondary bolder">研究所</span>\
+                                    <span class="color-third"> ( 2013.7 - 2015.7 )</span><br/>\
+                                    <span class="color-secondary bolder">計畫兼任助理</span>\
+                                </div><br/>\
+                                <ul>\
+                                    <li>計畫書撰寫</li>\
+                                    <li>協助公文流程、經費申請</li>\
+                                    <li>系統開發建置(HTML 5 Web App)</li>\
+                                    <li>維護舊有系統(ASP.NET Web Form)</li>\
+                                </ul>\
+                            </li>\
+                        </ul>\
+                    </div>');
+
+                $("#div_experience").append("<br/><br/><hr/><br/><br/>");             
+
+}
+
+function CreateWork(ParentID)
+{
+    $("#"+ParentID).append("<div id='div_work' class='block-main' ></div>");
+
+    //Block Title
+    $("#div_work").append("<div class='block-main-left'><span class='font-size-title-small'>"
+    +"<img alt='arrow-right' class='img-title' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVEhL7dQ7CoAwEEXRbMPv/jfgMhQEC79r0ffEgRCmy0wh5MIptJgpjAmlEhtggf59cuj+XNDxhXWygE5owbR4AR3QgFnpAtqgBpO0BbRCBdlpw8UI2WmDxQTZaYPJ7Dtow3cwO0npcB5T038hHu76o7ldFbzsZnC77Eq/LoQHcOtETlFNEk4AAAAASUVORK5CYII='>"
+    +"Project</span></div>");
+
+    //item 1
+    $("#div_work").append("<div class='block-item'>"
+    +"<div class='main'>"
+        
+    +"<div class='block-item-bg' style=' background-image:url(\"https://images.unsplash.com/photo-1536917570556-14ebac23ddf4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1610&q=80\")'></div>"
+    +"<div class='block-item-text font-size-title color-white bolder'>System Integration</div>"
+    +"<div class='block-item-sub-text color-white'>規劃、設計、開發與整併多個舊有報表系統(View)</div>"
+    +"<div class='block-item-button'>Detail "
+    +"<svg style='width:24px;height:24px' viewBox='0 0 24 24'><path class='icon-detail' fill='#FFFFFF' d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z' /></svg>"
+    +"</div>"
+    
+    +"</div>"
+    +"<div class='detail'>"
+    +"此專案為需整併公司舊有6個以上的產品，需涵蓋多項大功能以及大量報表，負責的項目包含 : <br/><ul><li>系統操作流程設計</li><li>網頁視覺設計</li><li>前端規格架構制定與系統開發</li><li>參與API規格制定與討論</li><li>技術文件撰寫</li></ul>"
+    +"系統使用 HTML5、CSS3、JavaScript、jQuery 與 Bootstrap 等技術完成，透過 JSON 格式與後端進行資料交換。"
+    +"也因客戶群的關係，在開發上要注意跨瀏覽器相容性處理，另外系統同時也支援 RWD排版，並在開發過程中加入 SPA 的技術，讓使用者在操作網頁時僅局部更新，提升使用者體驗。"
+    +"</div>"
+    +"</div>");
+
+    $("#div_work").append("<div class='block-item-detail'>"
+    
+    +"</div>"
+    )
+
+     //item 2
+     $("#div_work").append("<div class='block-item'>"
+    +"<div class='main'>"
+    +"<div class='block-item-bg' style=' background-image:url(\"https://images.unsplash.com/photo-1508830524289-0adcbe822b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1011&q=80\")'></div>"
+    +"<div class='block-item-text font-size-title color-white bolder'>Maintain Legacy Systems</div>"
+    +"<div class='block-item-sub-text color-white'>舊系統維護與功能擴充</div>"
+    +"<div class='block-item-button'>Detail "
+    +"<svg style='width:24px;height:24px' viewBox='0 0 24 24'><path class='icon-detail' fill='#FFFFFF' d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z' /></svg>"
+    +"</div>"
+    +"</div>"
+    +"<div class='detail'>"
+    +"此項目為依照客戶需求進行多個舊系統功能擴充，專案主要使用 ASP.NET Web Form、C# 等技術並搭配 MSSQL 資料庫進行開發。<br/>工作項目包含下列項目與其他擴充功能 : <ul><li>系統風格翻新</li><li>多國語言功能</li><li>儀表板設計與開發</li><li>表格凍結頂端列</li>"
+    +"</div>"
+
+    +"</div>");
+
+    //item 3
+    $("#div_work").append("<div class='block-item'>"
+    +"<div class='main'>"
+    +"<div class='block-item-bg' style=' background-image:url(\"https://images.unsplash.com/photo-1547032175-7fc8c7bd15b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80\")'></div>"
+    +"<div class='block-item-text font-size-title color-white bolder'>Stop TB</div>"
+    +"<div class='block-item-sub-text color-white'>都治計畫關懷員居家訪視系統</div>"
+    +"<div class='block-item-button'>Detail "
+    +"<svg style='width:24px;height:24px' viewBox='0 0 24 24'><path class='icon-detail' fill='#FFFFFF' d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z' /></svg>"
+    +"</div>"
+    +"</div>"
+
+    +"<div class='detail'>"
+    +"此項目為國科會計畫所開發的系統，與衛生福利部疾病管制署共同合作開發，主要提供送藥物給結核病患的關懷員進行居家訪視時使用。<br/>前端的部分以 HTML5 搭配 jQuery Mobile 開發，並利用 Offline Web Applications 技術支援離線功能，透過 Web Services 將資料以 XML 的格式進行溝通(後端由疾病管制署提供)。<br/><br/>"
+    +"系統適用於各種裝置與作業系統，只需透過 Google Chrome 瀏覽器即可連線使用，系統於104/06/01全台正式上線使用。"
+    +"</div>"
+    +"</div>");
+
+
+    $(".block-item-button").click(function(){
+        //$(this).toggleClass("flipped");
+        let hidden_status=$(this).parent("div").parent("div").children(".detail").is(":hidden");
+        if(hidden_status==true)
+        {
+            $(this).children("svg").children(".icon-detail").attr("d","M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z");
+        }
+        else
+        {
+            $(this).children("svg").children(".icon-detail").attr("d","M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z");
+        }
+
+        $(this).parent("div").parent("div").children(".detail").slideToggle("slow");
+        
+        
+    });
+
+
+     $(".block-item-button").hover(function() {
+            $(this).parent("div").children(".block-item-bg").css("-webkit-transform","scale(1.1)");
+            $(this).parent("div").children(".block-item-bg").css("transform","scale(1.1)");
+            $(this).parent("div").children(".block-item-bg").css("-webkit-filter","opacity(70%) blur(5px)");
+            $(this).parent("div").children(".block-item-bg").css("filter","opacity(70%) blur(5px)");
+            $(this).children("svg").children(".icon-detail").attr("fill","#363434");
+        }, function() {
+        // on mouseout, reset the background colour
+            $(this).parent("div").children(".block-item-bg").css("-webkit-transform","");
+            $(this).parent("div").children(".block-item-bg").css("transform","");
+            $(this).parent("div").children(".block-item-bg").css("-webkit-filter","opacity(60%)");
+            $(this).parent("div").children(".block-item-bg").css("filter","opacity(60%)");
+            $(this).children("svg").children(".icon-detail").attr("fill","#FFFFFF");
+  });
+
+}
+
+
+//About
+function CreateItem_About()
+{
+    CreateProfile("div_content");
+    CreateLifeText("div_content");
+    CreateLifeImg("div_content");
+}
+
+function CreateProfile(ParentID)
+{
+    $("#"+ParentID).append("<div class='row'>\
+            <div class='col-xl-6 col-12 block-item-img'>\
+                <img src='IMG/Rita2.JPG' alt='' class='img-about'>\
+            </div>\
+            <div class='col-xl-6 col-12 block-item-img-text'>\
+                <span class='font-size-title'>Hi! I’m Rita.</span><br/>\
+                <span class='font-size-content'>我是一位注重使用者體驗與視覺感受的軟體工程師，喜歡學習新的知識與技術，享受將美好事物透過技術實現的過程。</span>\
+                <br/><br/>\
+                <span class='font-size-content'>第一份工作任職於一間網管公司，畢業於國立臺北護理健康大學的資管研究所、銘傳大學的醫療資訊與管理學系。從大學時期開始接觸到程式設計後，就被程式可以帶來的成就感與好處深深吸引，\
+                    讓我決定往這條路繼續前進，也基於這樣的經歷，讓我擁有醫療與網管跨領域的基礎知識。\
+                </span>\
+                <br/><br/>\
+                <span class='font-size-content'>在閒暇之餘也喜歡撰寫一些小程式與網頁，幫助家人在工作上減少大量的時間；設計與撰寫動態的網頁賀卡給老師與朋友，期望能透過自己小小的力量，帶給身旁的人溫暖與快樂 🌞</span>\
+            </div>\
+        </div><br/><br/>");
+
+    $("#"+ParentID).append("<hr/><br/><br/>");
+}
+
+function CreateLifeText(ParentID)
+{
+    $("#"+ParentID).append("<div class='row'>\
+            <div class='col-xl-12 col-12 block-item-img-text'>\
+                    <div class='block-main-left'>\
+                        <span class='font-size-title-small'>More About Me</span>\
+                    </div>\
+                    <span class='font-size-content'>我喜歡聽音樂🎧、彈鋼琴🎹、練字✍、畫畫🎨、游泳🏊‍以及與小動物🐰🐱🐶相處，勇於嘗試新事物。</span><br/>\
+                    <span class='font-size-content'>攝影📸則是一直努力在學習的事!</span>\
+            </div>\
+        </div>");
+
+        $("#"+ParentID).append("<br/><br/>");
+}
+
+function CreateLifeImg(ParentID)
+{
+    $("#"+ParentID).append("<div id='div_lifeimg' class='block-item-img-life'></div>");
+
+    for(let i=1;i<=10; i++)
+    {
+        $("#div_lifeimg").append("<div><img alt='life' class='img-life' src='IMG/Life_"+i+".JPG'></div>");
+    }
+    
+    $('.block-item-img-life').slick({
+                dots: true,
+                arrows: false,
+                slidesToShow: 6,
+                slidesToScroll: 2,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                centerMode: true,
+                centerPadding: '150px',
+                slidesToShow: 3,
+                responsive: [
+                    {
+                    breakpoint: 900,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '80px',
+                        slidesToShow: 2
+                        }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '50px',
+                        slidesToShow: 1
+                        }
+                    }
+                ]
+        });
+
+        $("#div_lifeimg").append("<br/>")
+        $("#"+ParentID).append("<br/><br/>");
+    
+}
+
+
+document.addEventListener("DOMContentLoaded", function(){
+    ClearItem();
+    CreateItem_Work();
+});
+
+
+>>>>>>> f86b61c1deb2bf0449ad2b5fecf5c7b69787469b
 </script>
